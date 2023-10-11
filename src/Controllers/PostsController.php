@@ -9,4 +9,14 @@ class PostsController{
         view('posts/index', compact('posts'));
         
     }
+    public function create(){
+        view('posts/create');
+    }
+    public function store(){
+        $post = new Post();
+        $post->title = $_POST['title'];
+        $post->body = $_POST['body'];
+        $post->save();
+        header('Location: /admin/posts');
+    }
 }

@@ -1,4 +1,5 @@
 <?php include __DIR__ . '/../partials/header.php'?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <div class="container">
     <a class="button is-primary" href="/admin/posts/new">Add Post</a>
     <table class="table is-fullwidth is-striped">
@@ -10,8 +11,8 @@
         <tbody>
             <?php foreach($posts as $post): ?>
                 <tr>
-                    <td><?$post->id?></td>
-                    <td><?$post->title?></td>
+                    <td><?=$post->id?></td>
+                    <td><?=$post->title?></td>
                     <td>
                     <div class="buttons has-addons">
   <button class="button is-info">View</button>

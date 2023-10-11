@@ -10,3 +10,5 @@ Router::post( '/answer', [PublicController::class, 'answer']);
 Router::get( '/answer', [PublicController::class, 'getAnswer']);
 
 Router::get('/admin/posts', [PostsController::class, 'index']);
+Router::get('/admin/posts/new', [PostsController::class, 'create']);
+Router::post('/admin/posts', [PostsController::class, 'store']);
