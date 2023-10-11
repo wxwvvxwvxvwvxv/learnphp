@@ -52,7 +52,7 @@ class DB{
             $updateText .= "$name='$value',";
         }
         $updateText = rtrim($updateText, ',');
-        $sql = "UPDATE $table SET $updateText WHERE id=2";
+        $sql = "UPDATE $table SET $updateText WHERE id=$id";
         $stmt=$this->conn->prepare($sql);
         $stmt->execute();
     }
