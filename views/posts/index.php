@@ -15,10 +15,10 @@
                     <td><?=$post->title?></td>
                     <td>
                     <div class="buttons has-addons">
-  <button class="button is-info">View</button>
-  <button class="button">Edit</button>
-  <button class="button">Delete</button>
-</div></td>
+                    <a class="button is-info" href="/admin/posts/view?id=<?=$post->id?>">View</a>
+                    <a class="button is-warning" href="/admin/posts/edit?id=<?=$post->id?>">Edit</a>
+                    <a class="button is-danger" href="/admin/posts/delete?id=<?=$post->id?>">Delete</a>
+                    </div></td>
                 </tr>
 
                 <?php endforeach; ?>
