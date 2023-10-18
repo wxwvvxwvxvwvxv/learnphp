@@ -25,7 +25,6 @@ Router::post('/admin/users', [UsersController::class, 'store']);
 Router::get('/admin/users/view', [UsersController::class, 'show']);
 Router::get('/admin/users/edit', [UsersController::class, 'edit']);
 Router::post('/admin/users/edit', [UsersController::class, 'update']);
-<<<<<<< HEAD
 Router::get('/admin/users/delete', [UsersController::class, 'destroy']);
 
 
@@ -36,6 +35,4 @@ Router::get('/login',[AuthController::class, 'loginForm']);
 Router::post('/login',[AuthController::class, 'login']);
 
 Router::get('/logout',[AuthController::class, 'logout']);
-=======
 Router::get('/admin/users/delete', [UsersController::class, 'destroy']);
->>>>>>> 4912c8954e00c2892147ad3d728a13cc91e91637

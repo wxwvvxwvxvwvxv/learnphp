@@ -1,6 +1,7 @@
 <?php
 namespace App\Controllers;
 
+use App\Exceptions\NotFoundException;
 use App\Models\User;
 
 class UsersController{
