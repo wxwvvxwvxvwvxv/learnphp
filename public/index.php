@@ -2,12 +2,15 @@
 
 //var_dump($_SERVER);
 
-use App\Controllers\NotFoundException;
+use App\Exceptions\NotFoundException;
 
 spl_autoload_register(function ($class){
     $class = substr($class, 4);
     require_once __DIR__ . "/../src/$class.php";
 });
+
+require __DIR__ . '/../vendor/autoload.php';
+session_start();
 
 include __DIR__ . '/../routes.php';
 include __DIR__ . '/../helpers.php';
@@ -23,7 +26,7 @@ try{
             $method = $match['action'][1];
             $controller->$method();
         } else {
-        // throw error;
+        throw new NotFoundException();
     }
     
 } else {

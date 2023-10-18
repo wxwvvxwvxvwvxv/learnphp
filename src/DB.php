@@ -52,7 +52,7 @@ class DB{
             $updateText .= "$name='$value',";
         }
         $updateText = rtrim($updateText, ',');
-        $sql = "UPDATE $table SET $updateText WHERE id=2";
+        $sql = "UPDATE $table SET $updateText WHERE id=$id";
         $stmt=$this->conn->prepare($sql);
         $stmt->execute();
     }
@@ -61,5 +61,13 @@ class DB{
 
         // use exec() because no results are returned
         $this->conn->exec($sql);
+    }
+
+    public function where($table, $class, $fieldName, $fieldValue){
+        $stmt = $this->conn->prepare("SELECT * FROM $table WHERE $fieldName='$fieldValue'");
+        $stmt->execute();
+
+        $stmt->setFetchMode(PDO::FETCH_CLASS, $class);
+        return $stmt->fetchAll();
     }
 }

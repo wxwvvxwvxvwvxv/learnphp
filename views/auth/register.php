@@ -1,29 +1,27 @@
 <?php include __DIR__ . '/../partials/header.php'?>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 <div class="container">
-    <form action="/admin/posts" method="POST" enctype="multipart/form-data">
+    <form action="/register" method="POST">
     <div class="field">
-  <label class="label" for="title" >Title</label>
+  <label class="label" for="email" >Email</label>
   <div class="control">
-    <input id="title" class="input" type="text" placeholder="Title" name="title">
+    <input id="email" class="input" type="text" placeholder="Email" name="email">
   </div>
 </div>
 <div class="field">
-  <label class="label" for="body" >Content</label>
+  <label class="label" for="password" >Password</label>
   <div class="control">
-    <textarea class="textarea" id="body" placeholder="Content" name="body"></textarea>
+    <input class="input" type="password" id="password"  name="password">
   </div>
 </div>
-
 <div class="field">
-  <label class="label" for="image" >Image</label>
+  <label class="label">Password Confirm</label>
   <div class="control">
-    <input type="file" class="input" name="image" id="image">
+    <input class="input" type="password" id="password_confirm" name="password_confirm">
   </div>
 </div>
-
 <div class="field">
-
+  <label class="label">Create</label>
   <div class="control">
     <input class="button is-primary" type="submit" value="Create">
   </div>
